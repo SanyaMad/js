@@ -1,4 +1,4 @@
-const smoothScrollBtn = () => {
+const scrollBtn = () => {
     const scrollBtn = document.querySelector('.smooth-scroll')
 
     window.addEventListener('scroll', () => {
@@ -19,4 +19,4 @@ const smoothScrollBtn = () => {
     })
 }
 
-export default smoothScrollBtn
+export default scrollBtn

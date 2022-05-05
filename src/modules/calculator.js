@@ -23,7 +23,7 @@ const calculator = () => {
 
 
     if (calcBlock == null) {
-        console.log('ошибка');
+        console.log('нет блока с калькулятором');
     } else {
         calcBlock.addEventListener('input', (e) => {
             if (e.target === balconyValue || e.target === calcMeters || e.target === calcType) {

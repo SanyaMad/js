@@ -5,15 +5,15 @@ const modal = () => {
     const servicesModal = document.querySelector('.services-modal')
 
     document.addEventListener('click', (e) => {
-        if (e.target.closest('.button > .fancyboxModal')) {
-            overlay.style.display = "block"
-            headerModalContent.style.display = "block"
+        if (!e.target.closest('.header-modal') && e.target.closest('.overlay')) {
+            overlay.style.display = ""
+            headerModalContent.style.display = ""
         } else if (e.target.closest('.header-modal__close')) {
             overlay.style.display = ""
             headerModalContent.style.display = ""
-        } else if (e.target.closest('.overlay')) {
-            overlay.style.display = ""
-            headerModalContent.style.display = ""
+        } else if (e.target.closest('.button > .fancyboxModal')) {
+            overlay.style.display = "block"
+            headerModalContent.style.display = "block"
         }
 
         if (e.target.closest('.utp-button > .fancyboxModal')) {
@@ -27,7 +27,7 @@ const modal = () => {
         } else if (e.target.closest('.services-modal__close')) {
             overlay.style.display = ""
             servicesModal.style.display = ""
-        } else if (e.target.closest('.overlay')) {
+        } else if (!e.target.closest('.services-modal')  &&  e.target.closest('.overlay')) {
             overlay.style.display = ""
             servicesModal.style.display = ""
         }
