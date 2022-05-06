@@ -17,7 +17,7 @@ const send = ({ formId, someElem = [] }) => {
             } else if (input.name == 'phone') {
                 if (input.value === '') {
                     success = false
-                } else if (input.value.match(!/^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/g)) {
+                } else if (input.value.match(/[^0-9\(\)\+\-]/g)) {
                     success = false
                 }
             } 
