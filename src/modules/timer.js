@@ -21,35 +21,34 @@ const timer = (deadline) => {
     const updateClock = () => {
         let getTime = getTimeRemaining(deadline)
         const zeroToNumber = () => {
-            timerDays.forEach(timerDays => {
-                if (getTime.days < 10) {
+            timerDays.forEach(timerDays =>{
+            if (getTime.days < 10) {
                 timerDays.textContent = '0' + getTime.days
-                }
+            }
             })
-            timerHours.forEach(timerHours => {
-                if (getTime.hours < 10) {
-                    timerHours.textContent = '0' + getTime.hours
-                }
+            timerHours.forEach(timerHours =>{
+            if (getTime.hours < 10) {
+                timerHours.textContent = '0' + getTime.hours
+            }
             })
-            timerMinutes.forEach(timerMinutes => {
-                if (getTime.minutes < 10) {
-                    timerMinutes.textContent = '0' + getTime.minutes
-                }
+            timerMinutes.forEach(timerMinutes =>{
+            if (getTime.minutes < 10) {
+                timerMinutes.textContent = '0' + getTime.minutes
+            }
             })
-            timerSeconds.forEach(timerSeconds => {
-                if (getTime.seconds < 10) {
-                    timerSeconds.textContent = '0' + getTime.seconds
-                }
+            timerSeconds.forEach(timerSeconds =>{
+            if (getTime.seconds < 10) {
+                timerSeconds.textContent = '0' + getTime.seconds
+            }
             })
         }
-
-        timerDays.forEach(timerDays => {
+        timerDays.forEach(timerDays =>{
             timerDays.textContent = getTime.days
         })
-        timerHours.forEach(timerHours => {
-            timerHours.textContent = getTime.hoursgit
+        timerHours.forEach(timerHours =>{
+            timerHours.textContent = getTime.hours
         })
-        timerMinutes.forEach(timerMinutes => {
+        timerMinutes.forEach(timerMinutes =>{
             timerMinutes.textContent = getTime.minutes
         })
         timerSeconds.forEach(timerSeconds => {
@@ -58,24 +57,19 @@ const timer = (deadline) => {
         
         zeroToNumber()
 
-        
         if (getTime.timeRemaining < 0) {
             clearInterval(intervalID)
-            timerDays.forEach(timerDays => {
+            timerDays.forEach(timerDays =>{
                 timerDays.textContent = '00'
-
             })
-            timerHours.forEach(timerHours => {
+            timerHours.forEach(timerHours =>{
                 timerHours.textContent = '00'
-
             })
-            timerMinutes.forEach(timerMinutes => {
+            timerMinutes.forEach(timerMinutes =>{
                 timerMinutes.textContent = '00'
-
             })
-            timerSeconds.forEach(timerSeconds => {
-                timerSeconds.textContent = '00'
-
+            timerSeconds.forEach(timerSeconds =>{
+            timerSeconds.textContent = '00'
             })
         }
         
@@ -84,7 +78,5 @@ const timer = (deadline) => {
         updateClock()
     }, 1000);
 }
-
-
 
 export default timer

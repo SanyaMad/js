@@ -2,7 +2,7 @@ const modalImg = () => {
     const overlay = document.querySelector('.overlay')
     const body = document.querySelector('body')
     const imgs = document.querySelectorAll('.sertificate-document');
-    const disableImgAttributes = document.querySelectorAll('.sertificate-document')
+    const disable = document.querySelectorAll('.sertificate-document')
     const hoverEffectImgs = document.querySelectorAll('.document-overlay')
 
     hoverEffectImgs.forEach(hoverEffectImg => {
@@ -16,8 +16,8 @@ const modalImg = () => {
         })
     })
     
-    disableImgAttributes.forEach(disableImgAttributes => {
-        disableImgAttributes.setAttribute('href', '')
+    disable.forEach(disable => {
+        disable.setAttribute('href', '')
     })
 
     const addModalDocument = () => {
