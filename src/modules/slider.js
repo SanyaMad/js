@@ -1,15 +1,18 @@
-const slider = () => {
-    const benefitItems = document.querySelectorAll('.benefits__item')
-    const benefitsContent = document.querySelector('#benefits')
+const slider = (item, content, right, left) => {
+    const benefitItems = document.querySelectorAll(item)
+    const benefitsContent = document.querySelector(content)
 
     let currentSlide = 0
 
 
     const checkForInnerWidth = () => {
             benefitItems.forEach((benefitItem, i) => {
+
                 if (window.innerWidth >= 576) {
-                    if (i > 2) {
+                    if (i > 2 && content !='#services') {
                         benefitItem.classList.add('not-active')
+                       }else if(i > 1 && content == '#services'){
+                        benefitItem.classList.add('not-active')   
                        }
                 } else {
                    if (i > 0) {
@@ -18,7 +21,6 @@ const slider = () => {
                 }   
             })
     }
-
     checkForInnerWidth()
     
     const prevSlide = (elems, index, strClass) => {
@@ -32,7 +34,7 @@ const slider = () => {
     benefitsContent.addEventListener('click', (e) => {
         
         if (window.innerWidth >= 576) {
-            if (e.target.closest('.benefits__arrow--right')) {
+            if (e.target.closest(right)) {
                 benefitItems.forEach(benefitItem => {
                     if (benefitItem.classList.contains('not-active')) {
                         benefitItem.classList.remove('not-active')
@@ -41,7 +43,7 @@ const slider = () => {
                     }
                 })
             }
-            if (e.target.closest('.benefits__arrow--left')) {
+            if (e.target.closest(left)) {
                 benefitItems.forEach(benefitItem => {
                     if (benefitItem.classList.contains('not-active')) {
                         benefitItem.classList.remove('not-active')
@@ -53,9 +55,9 @@ const slider = () => {
         } else {
             prevSlide(benefitItems, currentSlide, 'not-active')
 
-            if (e.target.closest('.benefits__arrow--right')) {
+            if (e.target.closest(right)) {
                 currentSlide++
-            } else if (e.target.closest('.benefits__arrow--left')) {
+            } else if (e.target.closest(left)) {
                 currentSlide--          
             }
             if (currentSlide >= benefitItems.length) {
